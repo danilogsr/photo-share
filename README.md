@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# Photo-share assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project's goal was to create a family photo management application, where a family member can view photos in albums of another family member, while being able to create, update, and delete their own photos and albums.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Usage](#usage)
+- [Difficulties](#dificulties)
+- [Unfinished Work](#unfinished-work)
 
-### `npm start`
+# Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+In order to run the app, download/clone project to your machine. On root folder, run "npm start" to trigger frontend and on another terminal access "backend" folder and run "npm start" to trigger backend part of application.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Once both parts are running, open your browser (in case it did not open automatically) on "localhost:3000" to navigate the frontend. The user can click directly on top of the user names to check each user albums and click the albums to check their photos.
 
-### `npm test`
+If the user wants to check the backend apis, open a new window on "localhost:5000" and the following URLs can be accessed directly:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- {BASE_URL}/ => return all users
+- {BASE_URL}/users/:userId/albums => returns all albums for a user
+- {BASE_URL}/albums/:albumId/photos => returns all photos for an album
 
-### `npm run build`
+# Difficulties
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### New language
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This was my first time working with Node.js. My previous experiences on backend were with Python and C#, so not only I had to take some time to get used to typescript implementation for backend, I also had to get used to frontend again.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Time limitation
 
-### `npm run eject`
+The limit of 4 hours was initially not followed. The time taken to study the language, first time starting a project and building the code, deciding on architecture and naming had to be left aside otherwise there wouldn't be much to present.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Unfinished Work
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### "Admin" permission for own page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The user should only be able to see edit, add and delete buttons on his own pages, not for every page that he visits.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### CRUD functionalities are not finished
 
-## Learn More
+The items that are deleted should be removed from the page, the edit button should edit only one element at a time and not all elements that are clicked to edit and there is no save button to finish editing.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Changes should be persistent
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Once the user adds, removes or edit a record, that should remain. The app will currently restart every time once the page reloads because it is requesting data from jsonplaceholder and not storing it locally. This could be addressed with a local SQL data bank such as XAMPP.
+
+### Testing
+
+Since crud functionalities were not completed, testing would not make sense as there was nothing to test. I was planning on using Jest.
